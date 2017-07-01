@@ -67,12 +67,12 @@
 /*左侧按钮样式*/
 .poster-main .poster-prev-btn{
 	left:0;
-	background:  url(../imgs/btn_l.png) no-repeat center center;
+	background:  url(../img/btn_l.png) no-repeat center center;
 }
 /*右侧按钮样式*/
 .poster-main .poster-next-btn{
 	right:0;
-	background:  url(../imgs/btn_r.png) no-repeat center center;
+	background:  url(../img/btn_r.png) no-repeat center center;
 }
 /*幻灯片样式*/
 .poster-main .poster-list{
