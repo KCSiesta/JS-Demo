@@ -1,0 +1,151 @@
+* { margin: 0; padding: 0; }
+body{
+	padding: 50px 0;
+	background-color: #fff;
+	font-size: 14px;
+	color: #555;
+	-webkit-font-smothing: antialiased;
+}
+
+.slider .main,
+.main-i,
+.slider {     
+	   width: 100%;
+	   height: 400px;
+	   position: relative;  	
+}
+ /* 幻灯片区域样式 */
+.main{  
+	overflow: hidden;
+}
+
+.main .main-i img{ 
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	z-index: 1;
+}
+.caption{  
+	   position: absolute;
+	   right: 50%;
+	   top: 30%;
+	   z-index: 9;
+}
+.caption h2{
+	font-size: 40px;
+	line-height: 50px;
+	color: #b5b5b5;
+	text-align: right;
+}
+.caption h3{
+	font-size: 70px;
+	line-height: 70px;
+	color: #000;
+	text-align: right;
+	font-family: "Open Sans Condensed";
+}
+/* 控制按钮区域 */
+.slider .ctrl{ 
+	width: 100%;
+	height: 13px;
+	line-height: 13px;
+	left: 0;
+	bottom: -13px;
+	text-align: center;
+	background-color:#fff;
+}
+/* 每一个控制按钮的样式 */
+.ctrl .ctrl-i{  
+	display: inline-block;
+	width: 150px;
+	height: 13px;
+	background-color: #666;
+	box-shadow: 0px 1px 1px rgba(0,0,0,.3);
+	position: relative;
+	margin-left: 1px;
+}
+.ctrl .ctrl-i img{
+	width: 100%;
+	position:absolute;
+	left: 0;
+	bottom: 50px;
+	z-index: 3;
+	-webkit-transition: all .2s;
+	opacity: 0;
+}
+/* 按钮hover样式 */
+.ctrl .ctrl-i:hover{
+	background-color: #f0f0f0;
+}
+/* 图像hover和缩略图倒影 */
+.ctrl .ctrl-i:hover img{
+	bottom: 13px;
+	-webkit-box-reflect:below 0px -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	from( transparent ),
+	color-stop( 50%, transparent ),
+	to( rgba(255,255,255,.3) )
+);
+opacity:1;
+}
+
+/* 按钮和图像的的active样式 */
+.ctrl .ctrl-i_active,
+.ctrl .ctrl-i_active:hover{
+	background-color: #000;
+}
+.ctrl .ctrl-i_active:hover img{
+	opacity: 0;
+}
+/* 幻灯片切换样式 */
+.main .main-i{
+	     opacity: 0;
+	     position: absolute;
+	     right: 50%;
+	     top: 0;
+	      -webkit-transition:all .5s;
+	      z-index: 2;
+}
+
+/*为main-i_right增加样式，使其传入的方向不同*/
+     .main .main-i_right{
+	       right: 50%;
+  }
+/* 原来文字的样式，两行文字不对齐 */
+.main .main-i h2{
+	    margin-right: 45px;
+}
+.main .main-i h3{
+	   margin-right: -45px;
+}
+/* 为幻灯片切换时的文字添加过渡效果 */
+.main .main-i h2,
+.main .main-i h3{
+	opacity: 0;
+	   -webkit-transition:all  1s .8s;
+}
+#main_background,
+.main .main-i_active {
+right: 0;
+	      opacity: 1;
+	      z-index: 2;
+}
+#main_background{
+	        z-index: 1
+}
+/* 幻灯片切换完成后的文字效果 */
+.main .main-i_active h2,
+.main .main-i_active h3{
+	opacity: 1;
+	margin-right: 0px;
+
+}
+.main .main-i .caption{
+	margin-right: 13%;
+}
+/*为main-i_right增加样式，使其传入背景时的方向不同*/
+
+
