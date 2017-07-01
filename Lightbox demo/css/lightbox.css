@@ -1,0 +1,80 @@
+#G-lightbox-mask {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+             background-color: #000;
+             opacity: 0.5;
+             filter: alpha(opaction=50%);
+             z-index: 1000;
+             display: none;
+}
+
+#G-lightbox-popup {
+	position: fixed;
+	width: 400px;
+	top: 50px;
+	left: 50%;
+	margin-left: -200px;
+	z-index: 1001;	
+	display: none;
+}
+#G-lightbox-popup .lightbox-pic-view{
+            position: relative;
+            border: 5px solid #DCDCDC;
+            border-radius: 3px;
+            background: url(../img/loading5.gif) no-repeat center center; /*在该位置loading的img*/
+            overflow: hidden;
+}
+/*按钮的样式*/
+#G-lightbox-popup .lightbox-pic-view .lightbox-btn{
+	position: absolute;
+	top: 0;
+	width: 40%;
+	height: 100%;
+	z-index: 1;
+}
+/*左右按钮的定位*/
+#G-lightbox-popup .lightbox-pic-view .lightbox-prev-btn{
+	left: 0;
+}
+#G-lightbox-popup .lightbox-pic-view .lightbox-next-btn{
+	right: 0;
+}
+/*添加向左箭头图片*/
+#G-lightbox-popup .lightbox-pic-view .lightbox-prev-btn-show{
+	background: url(../img/chevron-left.png) no-repeat left center;
+	cursor: pointer;
+}
+/*添加向右箭头图片*/
+#G-lightbox-popup .lightbox-pic-view .lightbox-next-btn-show{
+	background: url(../img/chevron-right.png) no-repeat right center;
+	cursor: pointer;
+}
+#G-lightbox-popup .lightbox-pic-view .lightbox-image{
+	display: block;
+}
+#G-lightbox-popup .lightbox-pic-caption {
+	position: relative;
+	z-index: 2;
+	background-color: rgba(0,0,0,0.5);
+             margin: 0 5px;
+             margin-top: -60px;/*注意:CSS样式前后会相互影响*/
+}
+#G-lightbox-popup .lightbox-pic-caption .lightbox-caption-area {
+	color: #fff;
+	padding: 10px 5px;
+}
+#G-lightbox-popup .lightbox-pic-caption .lightbox-caption-area .lightbox-of-index{
+	color: #999;
+}
+#G-lightbox-popup .lightbox-pic-caption .lightbox-close-btn{
+	position: absolute;
+	width: 27px;
+	height: 27px;
+	background: url(../img/close.png) no-repeat center center;
+	right: 10px;
+             top: 13px;
+}
+

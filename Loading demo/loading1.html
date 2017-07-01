@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loading</title>
+<style type="text/css">
+	#box { position: relative; width: 200px; height: 500px; border: 1px solid #eee; margin: 0 550px; /*overflow:hidden; */}
+	#bg{ width:200px; height:500px; /*margin-top:10px;*/ /*margin-left:550px ;*/ background: url(1.png) no-repeat center;}
+	/*#bgcolor{position:absolute; top:20px; left:75px; width: 50px; height: 0px; background: #933031;  border-radius: 50px;}*/
+	#out-btn{position:absolute; top:0; left:0; height: 450px; width: 200px; overflow: hidden;}
+	#btn{position:absolute;   top: 420px;  left: 75px; width:50px;height: 500px; background: url(red1.png) no-repeat ; z-index: 1;}
+
+	#text{height: 500px; margin: auto; font-size: 30px;   font-family: 
+		'Raleway', sans-serif;}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<div id="box">
+		<div id="bg">
+		        <div id="bgcolor"></div>
+		</div>
+                          <div id="out-btn">
+                          <div id="btn"></div>
+                         </div>
+		<div id="text"></div>
+<script type="text/javascript">
+	(function($){
+		var $box = $('#box');
+		var $bg = $('#bg');
+		var $bgcolor = $('#bgcolor');
+		var $btn = $('#btn');
+		var $text = $('#text');
+		var statu = false;
+		var oy = 0;
+		var ly =0;
+		var top = 500;
+		var bgtop = 0;
+
+		$btn.mousedown(function(e){
+			ly = $btn.position().top;
+			oy = top-e.pageY;
+			statu = true;
+			});
+		$(document).mouseup(function(){
+			statu = false;
+		});
+		$box.mousemove(function(e){
+			if(statu){
+				top = e.pageY-oy;
+				if(top<0){
+					top =0;
+				}
+				if(top>450){
+					top=450  ;
+				}
+				
+				$btn.css('top',top);
+				// $bgcolor.height(top);
+				$text.html('愤怒指数:'+parseInt(100-top/4.5)+'°');
+			}
+		});
+		$bg.click(function(e){
+			if(!statu){
+				bgtop = $bg.offset().top;
+				top = e.pageY-bgtop;
+
+				if(top<0){
+					top=0;
+				}
+				if(top>450){
+					top = 450;
+				}
+				
+				$btn.css('top',top);
+				// $bgcolor.stop().animate();
+				$text.html("愤怒指数:"+parseInt(100-top/4.5)+'°');
+			}
+		});
+	})(jQuery);
+</script>
+	</div>
+</body>
+</html>

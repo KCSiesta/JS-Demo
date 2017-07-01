@@ -1,0 +1,301 @@
+
+ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+#sidebar {
+	width: 35px;
+	background-color: #e1e1e1;
+	padding-top: 200px;
+	position: fixed;/*可以使sidebar脱离文档流，使min-height:100%成为一个全屏高度*/
+	min-height: 100%;
+	z-index: 100;
+}
+
+.item {
+	font-size: 12px;
+	font-family: 'Andale Mono'
+	text-align: center;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+#closeBar{
+	position: absolute;
+	bottom: 30px;
+	width: 35px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.nav-content{
+             width: 200px;
+             position: fixed;
+             min-height: 100%;
+             background: #e1e1e1;
+             border: 1px solid black;
+             z-index: 99;
+             opacity: 0;
+}
+
+.nav-con-close{
+             position: absolute;
+             top: 5px;
+             right: 5px;
+             cursor: pointer;
+/*             z-index: 99;*/
+}
+
+/* sidebar向左移动的动画属性 animation样式 */
+.sidebar-move-left {
+             -webkit-animation-name: sml;
+             -moz-animation-name: sml;
+             -o-animation-name: sml;
+             animation-name: sml;
+             -webkit-animation-duration: 1s;
+             -moz-animation-duration: 1s;
+             -o-animation-duration: 1s;
+             animation-duration: 1s;
+             -webkit-animation-iteration-count: 1;
+             -moz-animation-iteration-count: 1;
+             -o-animation-iteration-count: 1;
+             animation-iteration-count: 1;
+             -webkit-animation-fill-mode: forwards;
+             -moz-animation-fill-mode: forwards;
+             -o-animation-fill-mode: forwards;
+             animation-fill-mode: forwards;
+}
+/* 关键帧的动画效果 */
+@-webkit-keyframes sml{
+	from{
+
+		}
+	to{
+                  -webkit-transform: translateX(-120px);
+		}
+}
+@keyframes sml{
+	from{
+
+		}
+	to{
+                  -webkit-transform: translateX(-120px);
+                  transform: translateX(-120px);
+		}
+}
+/* 关闭按钮向右移动的动画属性 */
+
+.closeBar-move-right{
+	-webkit-animation-name: sl;
+             -moz-animation-name: sl;
+             -o-animation-name: sl;
+             animation-name: sl;
+             -webkit-animation-duration: 1s;
+             -moz-animation-duration: 1s;
+             -o-animation-duration: 1s;
+             animation-duration: 1s;
+             -webkit-animation-iteration-count: 1;
+             -moz-animation-iteration-count: 1;
+             -o-animation-iteration-count: 1;
+             animation-iteration-count: 1;
+             -webkit-animation-fill-mode: forwards;
+             -moz-animation-fill-mode: forwards;
+             -o-animation-fill-mode: forwards;
+             animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes sl{
+	from{
+
+	}
+	to{
+	    -webkit-transform: translateX(160px) rotate(405deg) scale(1.5);
+	}
+}
+@keyframes sl{
+	from{
+
+	}
+	to{
+	    -webkit-transform: translateX(160px) rotate(405deg) scale(1.5);
+	    transform: translateX(160px) rotate(405deg) scale(1.5);
+	}
+}
+
+
+/* sidebar向右打开的动画效果 */
+.sidebar-move-right{
+	-webkit-animation-name: smr;
+	-moz-animation-name: smr;
+	-o-animation-name: smr;
+	animation-name: smr;
+             -webkit-animation-duration: 1s;
+             -moz-animation-duration: 1s;
+             -o-animation-duration: 1s;
+             animation-duration: 1s;
+             -webkit-animation-iteration-count: 1;
+             -moz-animation-iteration-count: 1;
+             -ms-animation-iteration-count: 1;
+             -o-animation-iteration-count: 1;
+             animation-iteration-count: 1;
+             -webkit-animation-fill-mode: forwards;
+             -moz-animation-fill-mode: forwards;
+             -ms-animation-fill-mode: forwards;
+             -o-animation-fill-mode: forwards;
+             animation-fill-mode: forwards;
+                    
+}
+@keyframes smr{
+	from{
+
+	}
+	to{
+                  transform: translateX(120px);
+	}
+}
+
+.closeBar-move-left {
+	-webkit-animation-name: sr;
+	-moz-animation-name: sr;
+	-o-animation-name: sr;
+	animation-name: sr;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-o-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+@-webkit-keyframes sr{
+	from{
+		transform : scale(1.5);
+	-webkit-transform : scale(1.5);
+	}
+	to{
+		transform: translateX(-160px)  scale(1)  rotate(-405deg);
+	-webkit-transform: translateX(-160px)  scale(1)  rotate(-405deg);
+	}
+}
+@keyframes sr{
+	from{
+	-webkit-transform : scale(1.5);
+		transform : scale(1.5);
+	}
+	to{
+	-webkit-transform: translateX(-160px) scale(1) rotate(-405deg);
+	              transform: translateX(-160px) scale(1) rotate(-405deg);
+	}
+}
+
+.menuContent-move-right {
+	-webkit-animation-name: mmr;
+	-moz-animation-name: mmr;
+	-o-animation-name: mmr;
+	animation-name: mmr;
+	-webkit-animation-duration: .5s;
+	-moz-animation-duration: .5s;
+	-o-animation-duration: .5s;
+	animation-duration: .5s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-o-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+@keyframes mmr{
+	from{
+	 opacity: 0;
+	}
+	to{
+	opacity: 1;
+	transform: translateX(120px);
+	}
+}
+
+.menuContent-move-left {
+	-webkit-animation-name: mml;
+	-moz-animation-name: mml;
+	-o-animation-name: mml;
+	animation-name: mml;
+	-webkit-animation-duration: .5s;
+	-moz-animation-duration: .5s;
+	-o-animation-duration: .5s;
+	animation-duration: .5s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-o-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+@-webkit-keyframes mml{
+	from{
+	 opacity: 1;
+	}
+	to{
+	opacity: 0;
+	-webkit-transform: translateX(-120px);
+	transform: translateX(-120px);
+	}
+}
+
+@keyframes mml{
+	from{
+	 opacity: 1;
+	}
+	to{
+	opacity: 0;
+	transform: translateX(-120px);
+	}
+}
+
+.menuContent-move-up {
+	-webkit-animation-name: mmu;
+	-moz-animation-name: mmu;
+	-o-animation-name: mmu;
+	animation-name: mmu;
+	-webkit-animation-duration: .5s;
+	-moz-animation-duration: .5s;
+	-o-animation-duration: .5s;
+	animation-duration: .5s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-o-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+@-webkit-keyframes mmu{
+	from{
+	 opacity: 0;
+	}
+	to{
+	opacity: 1;
+	-webkit-transform: translateY(-250px);
+	transform: translateY(-250px);
+	}
+}
+
+@keyframes mmu{
+	from{
+	 opacity: 0;
+	}
+	to{
+	opacity: 1;
+	transform: translateY(-250px);
+	}
+}
